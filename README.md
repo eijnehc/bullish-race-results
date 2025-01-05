@@ -1,50 +1,81 @@
-# React + TypeScript + Vite
+# JPMCC Bullish Race Results Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This web application provides a comprehensive visualization and analysis of race performance data for runners participating in the JPMCC (JP Morgan Corporate Challenge) races. The application allows users to explore individual runner statistics, track performance progression, and gain insights into race results over multiple years.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+### Key Functionalities
+- Interactive race results table
+- Detailed runner performance charts
+- Year-by-year performance tracking
+- Rank and time progression visualization
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Visualizations
+1. **Race Timing Table**
+   - Sortable table of runner names and their race times
+   - Supports multi-year data comparison
 
-- Configure the top-level `parserOptions` property like this:
+2. **Time Progression Chart**
+   - Graphical representation of race times across different years
+   - Displays time in minutes:seconds format
+   - Shows performance trends over time
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+3. **Rank Progression Chart**
+   - Visualizes overall and gender rank progression
+   - Allows comparison of ranking performance across years
+
+## Technologies Used
+
+- React
+- TypeScript
+- Chart.js
+- Tailwind CSS
+- Vite
+
+## Data Structure
+
+The application uses a JSON-based data structure (`results.json`) to store runner information:
+- Runner name
+- Race results for multiple years
+- Time, overall rank, and gender rank
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
+
+### Installation
+1. Clone the repository
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Run the development server
+   ```bash
+   npm run dev
+   ```
+
+## Project Structure
+```
+src/
+├── components/
+│   ├── RaceTimingTable.tsx
+│   ├── RunnerDetail.tsx
+│   ├── RankChart.tsx
+│   └── TimeChart.tsx
+├── data/
+│   └── results.json
+└── App.tsx
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+## License
+[Specify your license here]
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+## Contact
+[Your contact information]
