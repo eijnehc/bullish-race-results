@@ -53,7 +53,11 @@ export function RaceTimingTable() {
       header: year,
       cell: (info: any) => {
         const yearResults = info.row.original.results[year];
-        return yearResults?.time || "";
+        return yearResults?.time ? (
+          yearResults.time
+        ) : (
+          <span className="text-gray-500 italic">—</span>
+        );
       },
     })),
   ];
