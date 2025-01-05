@@ -56,7 +56,7 @@ export function RaceTimingTable() {
         return yearResults?.time ? (
           yearResults.time
         ) : (
-          <span className="text-gray-500 italic">—</span>
+          <span className="italic text-gray-500">—</span>
         );
       },
     })),
@@ -68,6 +68,11 @@ export function RaceTimingTable() {
     columns,
     state: {
       sorting,
+    },
+    initialState: {
+      columnPinning: {
+        left: ["name"],
+      },
     },
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
@@ -87,8 +92,13 @@ export function RaceTimingTable() {
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
+                    colSpan={header.colSpan}
                     onClick={header.column.getToggleSortingHandler()}
-                    className="cursor-pointer border border-gray-600 px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-300"
+                    className={`${
+                      header.column.columnDef.header === "Name"
+                        ? "sticky left-0 z-10 bg-white dark:bg-gray-800"
+                        : ""
+                    } cursor-pointer border border-gray-600 px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-300`}
                   >
                     {flexRender(
                       header.column.columnDef.header,
@@ -113,7 +123,11 @@ export function RaceTimingTable() {
                 {row.getVisibleCells().map((cell) => (
                   <td
                     key={cell.id}
-                    className="border border-gray-600 px-4 py-3 text-sm"
+                    className={`${
+                      cell.column.columnDef.header === "Name"
+                        ? "sticky left-0 z-10 border-r bg-white dark:bg-gray-800"
+                        : ""
+                    } border border-gray-600 px-4 py-4 text-sm text-gray-300`}
                   >
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
