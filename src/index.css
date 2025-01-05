@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900 text-white;
+}
+
+/* Ensure sticky positioning works across browsers */
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
