@@ -53,6 +53,7 @@ export function TimeChart({ data }: TimeChartProps) {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
@@ -109,7 +110,7 @@ export function TimeChart({ data }: TimeChartProps) {
   };
 
   return (
-    <div className="w-full rounded-lg bg-gray-800 p-4">
+    <div className="h-[300px] w-full rounded-lg bg-gray-800 p-4 md:h-[400px] lg:h-[500px]">
       <Line data={chartData} options={options} />
     </div>
   );

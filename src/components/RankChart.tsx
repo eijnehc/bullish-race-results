@@ -37,29 +37,30 @@ export function RankChart({ data }: RankChartProps) {
       {
         label: "Overall Rank",
         data: data.map((d) => d.overallRank),
-        borderColor: "teal",
-        backgroundColor: "rgba(0, 128, 128, 0.2)",
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
         tension: 0.1,
-        pointBackgroundColor: "teal",
-        pointBorderColor: "teal",
+        pointBackgroundColor: "rgb(255, 99, 132)",
+        pointBorderColor: "rgb(255, 99, 132)",
       },
       {
         label: "Gender Rank",
         data: data.map((d) => d.genderRank),
-        borderColor: "fuchsia",
-        backgroundColor: "rgba(255, 0, 255, 0.2)",
+        borderColor: "rgb(54, 162, 235)",
+        backgroundColor: "rgba(54, 162, 235, 0.5)",
         tension: 0.1,
-        pointBackgroundColor: "fuchsia",
-        pointBorderColor: "fuchsia",
+        pointBackgroundColor: "rgb(54, 162, 235)",
+        pointBorderColor: "rgb(54, 162, 235)",
       },
     ],
   };
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
-        display: true,
+        position: "top" as const,
         labels: {
           color: "white",
         },
@@ -94,9 +95,10 @@ export function RankChart({ data }: RankChartProps) {
         },
       },
       y: {
+        reverse: true,
         title: {
           display: true,
-          text: "Rank",
+          text: "Rank (Lower is Better)",
           color: "white",
         },
         ticks: {
@@ -106,13 +108,12 @@ export function RankChart({ data }: RankChartProps) {
         grid: {
           color: "rgba(255, 255, 255, 0.1)",
         },
-        reverse: true, // Lower rank (higher number) is worse
       },
     },
   };
 
   return (
-    <div className="mt-4 w-full rounded-lg bg-gray-800 p-4">
+    <div className="h-[300px] w-full rounded-lg bg-gray-800 p-4 md:h-[400px] lg:h-[500px]">
       <Line data={chartData} options={options} />
     </div>
   );
