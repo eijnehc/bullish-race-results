@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, HashRouter as Router, Routes } from "react-router-dom";
 
 import { RaceTimingTable } from "./components/RaceTimingTable";
 import { RunnerDetail } from "./components/RunnerDetail";
