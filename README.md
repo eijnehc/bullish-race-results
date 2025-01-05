@@ -7,17 +7,21 @@ This web application provides a comprehensive visualization and analysis of race
 ## Features
 
 ### Key Functionalities
+
 - Interactive race results table
 - Detailed runner performance charts
 - Year-by-year performance tracking
 - Rank and time progression visualization
 
 ### Visualizations
+
 1. **Race Timing Table**
+
    - Sortable table of runner names and their race times
    - Supports multi-year data comparison
 
 2. **Time Progression Chart**
+
    - Graphical representation of race times across different years
    - Displays time in minutes:seconds format
    - Shows performance trends over time
@@ -37,6 +41,7 @@ This web application provides a comprehensive visualization and analysis of race
 ## Data Structure
 
 The application uses a JSON-based data structure (`results.json`) to store runner information:
+
 - Runner name
 - Race results for multiple years
 - Time, overall rank, and gender rank
@@ -44,10 +49,12 @@ The application uses a JSON-based data structure (`results.json`) to store runne
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v18+)
 - npm or yarn
 
 ### Installation
+
 1. Clone the repository
 2. Install dependencies
    ```bash
@@ -59,6 +66,7 @@ The application uses a JSON-based data structure (`results.json`) to store runne
    ```
 
 ## Project Structure
+
 ```
 src/
 ├── components/
@@ -72,10 +80,5 @@ src/
 ```
 
 ## Contributing
+
 Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-[Specify your license here]
-
-## Contact
-[Your contact information]
